@@ -9,6 +9,7 @@ const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
   globalSetup: require.resolve('./setup/auth-setup'),
+  globalTeardown: require.resolve('./setup/auth-teatdown'),
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,

@@ -19,8 +19,6 @@ module.exports = async () => {
     // Save authentication state (cookies, localStorage) to reuse it in the tests
     await page.context().storageState({ path: authFile });
 
-    await page.waitForTimeout(10000);
-
     await page.close(); // Close the browser after saving the state
 
   }
