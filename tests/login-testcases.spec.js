@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage";
 
-test.use({ storageState: { cookies: [], origins: [] } });
+//test.use({ storageState: { cookies: [], origins: [] } });
 var login;
 
 test("LoginWith Valid credentials", async({page}) =>{
@@ -12,6 +12,7 @@ test("LoginWith Valid credentials", async({page}) =>{
     await expect(login.page).toHaveTitle("My Account");
     }
     catch(ex){
+        expect("Test failed due to exception see the logs").toEqual("Test should pass")
         console.error(ex)
     }
     finally{
