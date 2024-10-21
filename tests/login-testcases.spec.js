@@ -12,6 +12,7 @@ test("LoginWith Valid credentials", async({page}) =>{
     await expect(login.page).toHaveTitle("My Account");
     }
     catch(ex){
+        expect("Test failed due to exception see the logs").toEqual("Test should pass")
         console.error(ex)
     }
     finally{
