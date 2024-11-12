@@ -12,13 +12,17 @@ export class BasePage {
       .getByRole("link", { name: "My Account" })
       .first();
     this.loginLink = this.page.getByRole("link", { name: "Login" }).first();
-    this.tabletLink = this.page
-      .locator("#menu")
-      .getByRole("link", { name: "Tablets" });
   }
 
   async goto(url) {
     await this.page.goto(url);
+  }
+
+  async gotoProductPage(productName) {
+    await this.page
+      .locator("#menu")
+      .getByRole("link", { name: productName })
+      .click();
   }
 
   async waitForPageload() {
