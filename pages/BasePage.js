@@ -12,6 +12,7 @@ export class BasePage {
       .getByRole("link", { name: "My Account" })
       .first();
     this.loginLink = this.page.getByRole("link", { name: "Login" }).first();
+    this.btnCart = this.page.locator("#cart-total");
   }
 
   async goto(url) {
